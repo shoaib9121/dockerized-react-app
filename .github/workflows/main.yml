@@ -65,6 +65,7 @@ jobs:
       - 
         name: Vercel Action
         uses: amondnet/vercel-action@v20 #deploy
+          if: github.event_name == 'push' && github.ref == 'refs/heads/main'
           with:
             vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
             vercel-org-id: ${{ secrets.VERCEL_ORG_ID}}  #Required
